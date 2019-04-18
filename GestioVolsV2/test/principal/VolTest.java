@@ -27,13 +27,18 @@ import static org.junit.Assert.*;
 public class VolTest {
     
    private Vol vol;
+   private Avio avio;
+    private Ruta ruta;
+    private Tripulant tripulant;
     
     @Before
     public void setUp() {
         LocalTime time1 = LocalTime.parse("20:18"); 
         LocalTime time2 = LocalTime.parse("23:18"); 
         vol = new Vol("125",new Date(2018-02-27),new Date(2018-03-27),time1,time2);
-        ruta = new RutaNacional();
+        avio = new Avio("145","Airplanes.SL","Boeing 747",300);
+        
+        
     }
     
  
@@ -53,7 +58,7 @@ public class VolTest {
      */
     @Test
     public void testGetRuta() {
-       assertEquals(expResult, vol.getRuta());
+       assertEquals(ruta, vol.getRuta());
     }
 
 
@@ -62,58 +67,21 @@ public class VolTest {
      */
     @Test
     public void testGetAvio() {
-        System.out.println("getAvio");
-        Vol instance = null;
-        Avio expResult = null;
-        Avio result = instance.getAvio();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+ 
+        assertEquals(avio,vol.getAvio());
+ 
     }
 
-
-
-    /**
-     * Test of getTripulacio method, of class Vol.
-     */
-    @Test
-    public void testGetTripulacio() {
-        System.out.println("getTripulacio");
-        Vol instance = null;
-        Tripulant[] expResult = null;
-        Tripulant[] result = instance.getTripulacio();
-        assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-
-    /**
-     * Test of getPosicioTripulacio method, of class Vol.
-     */
-    @Test
-    public void testGetPosicioTripulacio() {
-        System.out.println("getPosicioTripulacio");
-        Vol instance = null;
-        int expResult = 0;
-        int result = instance.getPosicioTripulacio();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     /**
      * Test of getDataSortida method, of class Vol.
      */
     @Test
     public void testGetDataSortida() {
-        System.out.println("getDataSortida");
-        Vol instance = null;
-        Date expResult = null;
-        Date result = instance.getDataSortida();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
+        Date result = new Date(2018-02-27);
+        assertEquals(result, vol.getDataSortida());
+     
     }
 
     /**
@@ -121,13 +89,10 @@ public class VolTest {
      */
     @Test
     public void testGetDataArribada() {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-	Date date = new Date(2016/11/16);
-	dateFormat.format(date); //2016/11/16 12:08:43
-       
+        
+	Date date = new Date(2018-03-27);
         assertEquals(date,vol.getDataArribada());
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
 
@@ -136,13 +101,9 @@ public class VolTest {
      */
     @Test
     public void testGetHoraSortida() {
-        System.out.println("getHoraSortida");
-        Vol instance = null;
-        LocalTime expResult = null;
-        LocalTime result = instance.getHoraSortida();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        LocalTime result = LocalTime.parse("20:18"); ;
+        assertEquals(result, vol.getHoraSortida());
+        
     }
 
     /**
@@ -150,45 +111,13 @@ public class VolTest {
      */
     @Test
     public void testGetHoraArribada() {
-        System.out.println("getHoraArribada");
-        Vol instance = null;
-        LocalTime expResult = null;
-        LocalTime result = instance.getHoraArribada();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    
+        LocalTime result = LocalTime.parse("23:18"); ;
+        assertEquals(result, vol.getHoraArribada());
+      
     }
 
 
-    /**
-     * Test of getDurada method, of class Vol.
-     */
-    @Test
-    public void testGetDurada() {
-        System.out.println("getDurada");
-        Vol instance = null;
-        String expResult = "";
-        String result = instance.getDurada();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-
-
-    /**
-     * Test of getCap method, of class Vol.
-     */
-    @Test
-    public void testGetCap() {
-        System.out.println("getCap");
-        Vol instance = null;
-        TCP expResult = null;
-        TCP result = instance.getCap();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
 
 }

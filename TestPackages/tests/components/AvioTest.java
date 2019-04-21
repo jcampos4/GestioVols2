@@ -21,73 +21,73 @@ public class AvioTest {
 	}
 
 	@Test
-	public void getCodi() {
+	public void testGetCodi() {
 		assertEquals("CODITEST", avio.getCodi());
 	}
 
 	@Test
-	public void setCodi() {
+	public void testSetCodi() {
 		avio.setCodi("CODITEST2");
 		assertEquals("CODITEST2", avio.getCodi());
 	}
 
 	@Test
-	public void getFabricant() {
+	public void testGetFabricant() {
 		assertEquals("FabricantTest", avio.getFabricant());
 	}
 
 	@Test
-	public void setFabricant() {
+	public void testSetFabricant() {
 		avio.setFabricant("FabricantTest2");
 		assertEquals("FabricantTest2", avio.getFabricant());
 	}
 
 	@Test
-	public void getModel() {
+	public void testGetModel() {
 		assertEquals("ModelTest", avio.getModel());
 	}
 
 	@Test
-	public void setModel() {
+	public void testSetModel() {
 		avio.setModel("ModelTest2");
 		assertEquals("ModelTest2", avio.getModel());
 	}
 
 	@Test
-	public void getCapacitat() {
+	public void testGetCapacitat() {
 		assertEquals(100, avio.getCapacitat());
 	}
 
 	@Test
-	public void setCapacitat() {
+	public void testSetCapacitat() {
 		avio.setCapacitat(200);
 		assertEquals(200, avio.getCapacitat());
 	}
 
 	@Test
-	public void getClasses() {
+	public void testGetClasses() {
 		assertEquals(classe, avio.getClasses()[0]);
 	}
 
 	@Test
-	public void seleccionarClasse() {
+	public void testSeleccionarClasse() {
 		assertEquals(0, avio.seleccionarClasse("TestClasse"));
 	}
 
 	@Test
-	public void setClasses() {
+	public void testSetClasses() {
 		Classe[] classeTestSetClasse = { new Classe("TestClasse2", 200) };
 		avio.setClasses(classeTestSetClasse);
 		assertEquals(classeTestSetClasse[0].getNom(), avio.getClasses()[0].getNom());
 	}
 
 	@Test
-	public void getPosicioClasses() {
+	public void testGetPosicioClasses() {
 		assertEquals(1, avio.getPosicioClasses());
 	}
 
 	@Test
-	public void setPosicioClasses() {
+	public void testSetPosicioClasses() {
 		avio.setPosicioClasses(2);
 		assertEquals(2, avio.getPosicioClasses());
 	}
